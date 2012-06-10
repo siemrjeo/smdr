@@ -55,6 +55,12 @@ function search(cid, keyword) {
 	location.href = "search.html";
 }
 
+function toS8() {// 转跳到搜吧
+	var q = $("#keyword").val();
+	var href = String.format("http://s8.taobao.com/search?q=%1&pid=mm_23868633_0_0&unid=smdrsearch&taoke_type=1", q);
+	window.open(encodeURI(href), target = 'blank');
+}
+
 function bindMap() {
 	$("#appleDiv").slideshow();
 	$("#androidDiv").slideshow();

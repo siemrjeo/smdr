@@ -21,7 +21,25 @@ $(document).ready(function() {
 		dataType : "json",
 		type : "POST"
 	});
+	AutoUpdateJavaScript();
 });
+
+// 生成按小时调用js参数
+function AutoUpdateJavaScript() {
+	var now = new Date();
+	var year = now.getFullYear();
+	var month = now.getMonth() + 1;
+	var date = now.getDate();
+	var hours = now.getHours();
+
+	var str = "?update=" + year + month + date + hours;
+	var adjson = $("head script[src*='adjson.js']");// 更新广告js
+	adjson.attr('src', adjson.attr('src') + str);
+	var article = $("head script[src*='article.js']");// 更新文章js
+	article.attr('src', article.attr('src') + str);
+	var proxy = $("head script[src*='proxy.js']");// 更新proxy js
+	proxy.attr('src', proxy.attr('src') + str);
+}
 
 // 获取get参数。
 function GetQueryString(name) {
