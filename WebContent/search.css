@@ -1,0 +1,108 @@
+/*让ie支持css3*/
+/*弹出详细信息带圆角和阴影*/
+.ui-tooltip{
+	behavior: url(compatible/PIE.htc);
+}
+
+/*img式样*/
+img{
+	display:block;
+	border:none;
+	margin:auto;
+}
+
+/* itemDiv式样*/
+.itemDiv {
+	height: 300px;
+	width: 180px;
+	overflow: hidden;
+	margin: auto;
+	text-align: center;
+}
+
+.titleDiv {
+	height:29px;
+	width:180px;
+	overflow:hidden;
+	font-size:12px;
+	font-weight:normal;
+	line-height:normal;
+}
+
+.priceDiv {
+	height:15px;
+	width:180px;
+	overflow:hidden;
+	font-size:12px;
+	font-weight:normal;
+	line-height:normal;
+	color:#CC0000;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+.volumeDiv {
+	width:180px;
+	overflow:hidden;
+	font-size:12px;
+	background-color:#E23C3C;
+	color:#FFFFFF;
+}
+
+.volumeDiv span{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+/*提示模板式样*/
+.shop-rate{
+	border-bottom: 0;
+	font-size:12px;
+	padding: 6px 0;
+}
+
+.traderates-info{
+	padding-top:3px;
+	height: 190px;
+	font-size:12px;
+	overflow: scroll;
+}
+
+.shop-rate ul{
+	list-style : none outside none;
+	margin: 0;
+	border: 0;
+}
+
+.traderates-info ul{
+	margin: 0;
+	border:0;
+	list-style-type: inherit;
+}
+
+.shop-rate li，.traderates-info li{
+	padding-top:6px;
+	padding-bottom:6px;
+	margin-top:6px;
+	margin-bottom:6px;
+	list-style:none outside none ;
+	line-height: 15px;
+	width: 180px;
+}
+
+.shop-rate em{
+	font-size: 12px;
+	font-weight: 700;
+}
+
+ .traderates-info ul li span {
+ 	font-size : 12px;
+	color : #3366DE;
+}
+
+ .traderates-info ul li .bn {
+	font-weight: 700;
+}
+
+.shop-rate .count {
+	color : #3366DE;
+}

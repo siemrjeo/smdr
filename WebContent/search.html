@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>数码达人</title>
+<link href="search.css" rel="stylesheet" type="text/css">
+<link href="qtip/jquery.qtip.min.css" rel="stylesheet" type="text/css">
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+<![endif]-->
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script type="text/javascript" src="json/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="http://a.tbcdn.cn/apps/stargate/ac/js/proxy.js"></script>
+<script type="text/javascript" src="store/store_json2.min.js"></script>
+<script type="text/javascript" src="qtip/jquery.qtip.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="search.js"></script>
+<script type="text/javascript" src="http://toptrace.taobao.com/assets/getAppKey.js" topappkey="12530804" defer="defer"></script>
+</head>
+<body>
+	<table width="950" border="0" align="center" cellpadding="0" cellspacing="0">
+		<tr>
+			<td><a href="index.html">主页</a> <span>>></span> <a href="#">搜索</a></td>
+		</tr>
+		<tr>
+			<td height="92" colspan="4"><div>页头</div></td>
+		</tr>
+		<tr>
+			<td height="66" colspan="4"><div>搜索框</div></td>
+		</tr>
+		<tr>
+			<td height="36" colspan="3"><div>按销量排序</div></td>
+			<td width="230" rowspan="15"><div>分类广告</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td height="36" colspan="3"><div>按价格升序</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td height="37" colspan="3"><div>同价位推荐</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td height="46" colspan="3"><div>按卖家信誉</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300" align="center" valign="middle" class="itemTD"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td height="44" colspan="3"><div>同城宝贝</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td width="240" height="300"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+			<td width="240" height="300"><div class="itemDiv">
+					<a href="" target="_blank"><img src="" alt="" width="160" height="160" align="middle"></a>
+					<div class="volumeDiv">
+						月销量:<span></span>件
+					</div>
+					<img src="" alt="">
+					<div class="titleDiv">
+						<a href="" title="" target="_blank"></a>
+					</div>
+					<div class="priceDiv"></div>
+				</div></td>
+		</tr>
+		<tr>
+			<td height="79" colspan="4"><div>页尾</div></td>
+		</tr>
+	</table>
+	<div id="tipDiv" style="visibility: hidden;">
+		<div class="shop-rate">
+			<strong>店铺动态评分</strong><br /> <strong></strong>
+			<ul>
+				<li>描述相符： <em class="count">无数据</em>
+				</li>
+				<li>服务态度： <em class="count">无数据</em>
+				</li>
+				<li>发货速度： <em class="count">无数据</em>
+				</li>
+			</ul>
+			<div>
+				创店时间：<span>无数据</span>
+			</div>
+			<div>
+				所在地：<span>无数据</span>
+			</div>
+		</div>
+		<div class="traderates-info">
+			<strong>买家评价</strong>
+			<ul>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+				<li><span class="bn">无数据</span><span class="content"></span></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

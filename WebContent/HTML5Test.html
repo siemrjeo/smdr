@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML5Test</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script type="text/javascript" src="https://getfirebug.com/firebug-lite.js"></script>
+<![endif]-->
+<style type="text/css">
+.pie_radius1, .pie_box_shadow{   
+    behavior: url(compatible/PIE.htc);
+}
+.pie_radius1 {
+	width: 360px;
+	height: 200px;
+	background-color: #34538b;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	position: relative;
+}
+
+.pie_box_shadow {
+	width: 360px;
+	height: 200px;
+	background-color: #34538b;
+	-moz-box-shadow: 1px 3px 3px #666;
+	-webkit-box-shadow: 1px 3px 3px #666;
+	box-shadow: 1px 3px 3px #666;
+	position: relative;
+}
+
+#shop-info {
+	font : 12px/1.5 tahoma,arial,宋体;
+    background-color: #F9F9F9;
+    border: 1px solid #E7E7E7;
+    box-shadow: 2px 2px 2px #999999;
+    -moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+    left: 0;
+    padding: 5px 10px 0;
+    top: 49px;
+    width: 260px;
+    behavior: url(compatible/PIE.htc);
+}
+
+#shop-info .shop-rate{
+	border-bottom: font-size:12px;
+	padding: 6px 0;
+}
+
+#shop-info .traderates-info{
+	height: 120px;
+	overflow: scroll;
+}
+
+#shop-info ul{
+	list-style : none outside none;
+	margin: 0;
+	border: 0;
+}
+
+#shop-info li{
+	padding:0;
+	list-style:none outside none;
+	line-height: 15px;
+	margin: 5px 0 0;
+}
+
+#shop-info em{
+	font-size: 12px;
+	font-weight: 700;
+}
+
+#shop-info .shop-rate .count {
+	color : #3366DE;
+}
+</style>
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script type="text/javascript" src="json/jquery.json-2.2.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript" src="store/store_json2.min.js"></script>
+<script type="text/javascript" src="HTML5Test.js"></script>
+</head>
+<body>
+	<label>sessionStorage</label>
+	<input id="text1" type="text">
+	<button onclick="save1()">存入</button>
+	<button onclick="read1()">读取</button>
+	<label>localStorage</label>
+	<input id="text2" type="text">
+	<button onclick="save2()">存入</button>
+	<button onclick="read2()">读取</button>
+	<div id="shop-info">
+		<div class="shop-rate">
+		<strong>店铺动态评分</strong>
+		<ul>
+			<li>描述相符：
+				<em class="count">4.9</em>
+			</li>
+			<li>服务态度：
+				<em class="count">4.9</em>
+			</li>
+			<li>发货速度：
+				<em class="count">4.9</em>
+			</li>
+		</ul>
+		<div>simerjoe</div>
+		<div>创店时间：<span>2012-12-20</span></div>
+		<div>所在地：<span>湖南长沙</span></div>
+		</div>
+		<div class = "traderates-info">
+		<strong>买家评价</strong>
+			<ul>
+				<li>姓名1<em>评价内容1评价内容1评价内容1评价内容1评价内容1评价内容1评价内容1评价内容1评价内容1评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+				<li>姓名1<em>评价内容1</em></li>
+			</ul>
+		</div>
+	</div>
+	<div class="pie_radius1"></div>
+	<div class="pie_box_shadow"></div>
+</body>
+</html>

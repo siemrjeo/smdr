@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>数码达人</title>
+<!--[if IE]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script type="text/javascript" src="jquery/jquery.min.js"></script>
+<script type="text/javascript" src="json/jquery.json-2.2.min.js"></script>
+<script type="text/javascript"
+	src="http://a.tbcdn.cn/apps/stargate/ac/js/proxy.js"></script>
+	<script type="text/javascript" src="store/store_json2.min.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#ErrorInfo").html(store.get("ErrorInfo"));
+	})
+	function goback(){
+		history.back();
+	}
+</script>
+</head>
+<body>
+	<div id="ErrorInfo"></div>
+	<a href="http://yingyong.taobao.com/third/preview.htm?appKey=12530804">首页</a>
+	<a href="javascript:goback();">返回</a>
+</body>
+</html>

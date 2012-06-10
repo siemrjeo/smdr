@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<head>
+	<title>store.js test</title>
+	<!--[if lte IE 6]>
+	<script type="text/javascript" src="../compatible/firebug.js"></script>
+	'![endif]-->'
+	<style type="text/css">
+		body { margin: 50px; font-family: helvetica; color: #333; }
+		div { color: green; }
+		#errorOutput div { color: red; }
+	</style>
+	<script src="json.js"></script>
+	<script src="store.js"></script>
+</head>
+<body>
+	tests for <a href="http://github.com/marcuswestin/store.js">store.js</a>
+	<div id="errorOutput"></div>
+
+	<script>
+		(function() {
+			var doc = document,
+				errorOutput = doc.getElementById('errorOutput'),
+				testFailed = false,
+				isSecondPass = (doc.location.hash == '#secondPass')
+
+			function outputError(msg) { errorOutput.appendChild(doc.createElement('div')).innerHTML = msg }
+			function assert(truthy, msg) { 
+				if (!truthy) {
+					outputError((isSecondPass ? 'second' : 'first') + ' pass bad assert: ' + msg);
+					if (store.disabled) { outputError('<br>Note that store.disabled == true') }
+					testFailed = true
+				}
+			}
+			
+			function doFirstPass() {
+				console.log("begin")
+				store.clear()
+				console.log("0")
+				
+				store.set('foo', 'bar')
+				console.log("1")
+				assert(store.get('foo') == 'bar', "stored key 'foo' not equal to stored value 'bar'")
+				console.log("2")
+				
+				store.remove('foo')
+				console.log("3")
+				assert(store.get('foo') == null, "removed key 'foo' not null")
+				console.log("4")
+
+				store.set('foo', 'bar1')
+				store.set('foo', 'bar2')
+				assert(store.get('foo') == 'bar2', "key 'foo' is not equal to second value set 'bar2'")
+				console.log("5")
+				
+				store.set('foo', 'bar')
+				store.set('bar', 'foo')
+				store.remove('foo')
+				assert(store.get('bar') == 'foo', "removing key 'foo' also removed key 'bar'")
+				console.log("6")
+				
+				store.set('foo', 'bar')
+				store.set('bar', 'foo')
+				store.clear()
+				assert(store.get('foo') == null && store.get('bar') == null, "keys foo and bar not cleared after store cleared")
+				console.log("7")
+				
+				store.transact('foosact', function(val) {
+					assert(typeof val == 'object', "new key is not an object at beginning of transaction")
+					val.foo = 'foo'
+						console.log("end")
+				})
+				store.transact('foosact', function(val) {
+					assert(val.foo == 'foo', "first transaction did not register")
+					val.bar = 'bar'
+						console.log("store.transact ok")
+				})
+				assert(store.get('foosact').bar == 'bar', "second transaction did not register")
+
+				store.set('foo', { name: 'marcus', arr: [1,2,3] })
+				console.log("set object arr ok")
+				assert(typeof store.get('foo') == 'object', "type of stored object 'foo' is not 'object'")
+				console.log("get object arr ok")
+				assert(store.get('foo') instanceof Object, "stored object 'foo' is not an instance of Object")
+				console.log("get object arr and instanceof ok")
+				assert(store.get('foo').name == 'marcus', "property 'name' of stored object 'foo' is not 'marcus'")
+				console.log(".name object arr ok")
+				assert(store.get('foo').arr instanceof Array, "Array property 'arr' of stored object 'foo' is not an instance of Array")
+				assert(store.get('foo').arr.length == 3, "The length of Array property 'arr' stored on object 'foo' is not 3")
+				
+				store.remove('circularReference')
+				console.log("remove ok")
+				var circularOne = {}
+				var circularTwo = { one:circularOne }
+				circularOne.two = circularTwo
+				var threw = false
+				try { store.set('circularReference', circularOne) }
+				catch(e) { threw = true }
+				assert(threw, "storing object with circular reference did not throw")
+				assert(!store.get('circularReference'), "attempting to store object with circular reference which should have faile affected store state")
+				console.log("set object key ok")
+				
+				// The following stored values get tested in doSecondPass after a page reload
+				store.set('firstPassFoo', 'bar')
+				store.set('firstPassObj', { woot: true })
+				console.log("set object value ok")
+				
+				//var all = store.getAll()
+				//console.log("getall ok")
+				//assert(all.firstPassFoo == 'bar', 'getAll gets firstPassFoo')
+				//assert(countProperties(all) == 4, 'getAll gets all 4 values')
+			}
+			
+			function doSecondPass() {
+				assert(store.get('firstPassFoo') == 'bar', "first pass key 'firstPassFoo' not equal to stored value 'bar'")
+				console.log(store.get("firstPassFoo"));
+				console.log("21")
+				//var all = store.getAll()
+				//console.log("22")
+				//assert(all.firstPassFoo == 'bar', "getAll still gets firstPassFoo on second pass")
+				//assert(countProperties(all) == 4, "getAll gets all 4 values")
+				
+				store.clear()
+				assert(store.get('firstPassFoo') == null, "first pass key 'firstPassFoo' not null after store cleared")
+				console.log("22")
+				//var all = store.getAll()
+				//assert(countProperties(all) == 0, "getAll returns 0 properties after store.clear() has been called")
+			}
+			
+			function countProperties(obj) {
+				var count = 0
+				for (var key in obj) {
+					if (obj.hasOwnProperty(key)) { count++ }
+				}
+				return count
+			}
+			
+			if (isSecondPass) { doSecondPass() }
+			else { doFirstPass() }
+			
+			try {
+				if (isSecondPass) { doSecondPass() }
+				else { doFirstPass() }
+			} catch(e) {
+				assert(false, 'Tests should not throw: "' + JSON.stringify(e) + '"')
+			}
+
+			if (!testFailed) {
+				if (!isSecondPass) {
+					doc.location.hash = '#secondPass'
+					doc.location.reload()
+				} else {
+					doc.location.hash = '#'
+					doc.body.appendChild(doc.createElement('div')).innerHTML = 'Tests passed'
+				}
+			}
+		})()
+	</script>
+</body>
+</html>

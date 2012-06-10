@@ -1,0 +1,55 @@
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="ajaxBuyerPackage" namespace="/buyer" extends="json-default">
+		<action name="login" class="buyer.Buyer" method="login">
+			<!-- 返回类型为json 在json-default中定义 -->
+			<result type="json">
+				<!-- root的值对应要返回的值的属性,这里的JSON值即是 对应action中的 JSON -->
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="saveRecord" class="buyer.Buyer" method="saveRecord">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="searchCommissionNum_desc" class="buyer.Buyer"
+			method="searchCommissionNum_desc">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="searchPrice_asc" class="buyer.Buyer" method="searchPrice_asc">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="searchCredit_desc" class="buyer.Buyer" method="searchCredit_desc">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="searchArea" class="buyer.Buyer" method="searchArea">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="searchPrice_range" class="buyer.Buyer" method="searchPrice_range">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="getShopInfo" class="buyer.Buyer" method="getShopInfo">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+		<action name="getTraderates" class="buyer.Buyer" method="getTraderates">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
+	</package>
+</struts>
