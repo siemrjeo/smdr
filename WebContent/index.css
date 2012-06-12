@@ -24,3 +24,7 @@ div.appleAdvert,div.androidAdvert,div.DSTLAdvert{
 .appleArticle, .androidArticle, .DSTLArticle{
 	margin-right: 20px;
 }
+
+.typeLogo {
+	vertical-align: middle;
+}

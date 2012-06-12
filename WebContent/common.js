@@ -24,7 +24,7 @@ $(document).ready(function() {
 	AutoUpdateJavaScript();
 });
 
-// 生成按小时调用js参数
+// 按小时生成调用的js参数
 function AutoUpdateJavaScript() {
 	var now = new Date();
 	var year = now.getFullYear();
