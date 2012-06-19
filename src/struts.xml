@@ -51,5 +51,10 @@
 				<param name="root">response</param>
 			</result>
 		</action>
+		<action name="dynamicAD" class="buyer.Buyer" method="dynamicAD">
+			<result type="json">
+				<param name="root">response</param>
+			</result>
+		</action>
 	</package>
 </struts>

@@ -14,8 +14,8 @@ public class SmdrBase {
 	protected JSONObject request = new JSONObject();
 	protected JSONObject response = new JSONObject();
 	protected DefaultTaobaoClient client;
-	protected Map<String, Object> session = ServletActionContext.getContext()
-			.getSession();
+	protected Map<String, Object> session = ServletActionContext.getContext().getSession();
+	protected Map<String, Object> application = ServletActionContext.getContext().getApplication();
 	protected String serverUrl = "http://gw.api.taobao.com/router/rest"; // 正式环境
 	protected String appKey = "12530804";
 	protected String appSecret = "01c9e811ccb701c48a52b692b0e33afe";
@@ -38,15 +38,14 @@ public class SmdrBase {
 
 	protected String getRemortIP() {
 		HttpServletRequest hsRequest = ServletActionContext.getRequest();
-		return hsRequest.getHeader("x-forwarded-for") == null ? hsRequest
-				.getRemoteAddr() : hsRequest.getHeader("x-forwarded-for");
+		return hsRequest.getHeader("x-forwarded-for") == null ? hsRequest.getRemoteAddr() : hsRequest
+				.getHeader("x-forwarded-for");
 	}
 
 	protected String getLoginCountry() {
 		QQWry w = new QQWry();
 		try {
-			String patch = ServletActionContext.getServletContext()
-					.getRealPath("/") + "qqwry.dat";
+			String patch = ServletActionContext.getServletContext().getRealPath("/") + "qqwry.dat";
 			w.setPath(patch);
 			w.seek(getRemortIP());
 		} catch (Exception e) {
