@@ -140,7 +140,37 @@ var ad = {
 	} ]
 };
 
+function dynamicAD() {
+	// 专业单反50003773,手机1512，平板电脑50019780，台式机50018222
+	$.ajax({
+		url : "buyer/dynamicAD",
+		async : false,
+		success : function(data, textStatus) {
+			// 用动态ad补充ad
+			store.set("dynamicAD", data);
+			for ( var item in data["50003773"]) {
+				obj = {
+					title : data["50003773"][item].title,
+					url : data["50003773"][item].clickUrl,
+					iconurl : tmallicon,
+					tkurl : data["50003773"][item].clickUrl
+				};
+				ad.DSTL.push(obj);
+				if (ad.DSTL.length >= 30) {
+					break;
+				}
+			}
+		},
+		complete : function(XMLHttpRequest, textStatus) {
+		},
+		error : function(XMLHttpRequest, textStatus, errorThrown) {
+			toErrorPage("服务器错误：" + errorThrown);
+		}
+	});
+}
+
 function showAD($appleC, $androidC, $DSTLC) {
+	dynamicAD();
 	var apple = ad.apple;
 	for ( var i in apple) {
 		var div = $('<div class="appleAdvert"></div>');
