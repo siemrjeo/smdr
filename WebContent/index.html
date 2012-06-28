@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <title>数码达人</title>
 <link rel="stylesheet" type="text/css" href="slideshow/demo.css" />
+<link rel="stylesheet" type="text/css"
+	href="responsiveSlides/responsiveslides.css" />
 <link rel="stylesheet" type="text/css" href="index.css" />
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -22,6 +24,8 @@ ul li{
 	src="http://a.tbcdn.cn/apps/stargate/ac/js/proxy.js"></script>
 <script type="text/javascript" src="/store/store_json2.min.js"></script>
 <script type="text/javascript" src="/slideshow/script.js"></script>
+<script type="text/javascript"
+	src="responsiveSlides/responsiveslides.min.js"></script>
 <script type="text/javascript" src="/common.js"></script>
 <script type="text/javascript" src="/ad/adjson.js"></script>
 <script type="text/javascript" src="/article/article.js"></script>
@@ -32,13 +36,18 @@ ul li{
 </head>
 <body>
 	<div id="divMain">
-		<table border="0" id="tableMain">
+		<table id="tableMain">
 			<tbody>
 				<tr>
-					<td height="70" colspan="3"><div>页头（log、宣传语等)</div></td>
+					<td height="70px" colspan="3"><div></div></td>
 				</tr>
 				<tr>
-					<td height="240" colspan="3"><div>滚动广告</div></td>
+					<td height="240px" colspan="3">
+						<ul class="rslides">
+							<li><img alt="" src="/ad/1.png" usemap="#ad1" /></li>
+							<li><img alt="" src="/ad/2.jpg" usemap="#ad2" /></li>
+						</ul>
+					</td>
 				</tr>
 				<tr>
 					<td height="60" colspan="3"><div>
@@ -252,6 +261,9 @@ ul li{
 			</tbody>
 		</table>
 	</div>
+	<!-- 绑定首页广告 -->
+	<map name="ad1"></map>
+	<map name="ad2"></map>
 	<!-- 绑定apple系列产品 -->
 	<map name="appleMacbookairMap">
 		<area alt="Macbook" href="javascript:search('1101','Macbook');"

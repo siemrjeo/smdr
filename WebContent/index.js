@@ -62,6 +62,9 @@ function toS8() {// 转跳到搜吧
 }
 
 function bindMap() {
+	$(".rslides").responsiveSlides({
+		pager : true
+	});
 	$("#appleDiv").slideshow();
 	$("#androidDiv").slideshow();
 	$("#DSRLDiv").slideshow();
