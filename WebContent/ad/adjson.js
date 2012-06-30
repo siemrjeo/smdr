@@ -1,4 +1,4 @@
-var tmallicon = "/ad/level_20.gif";
+var tmallicon = "/ad/level_20.jpg";
 var ad = {
 	apple : [ {
 		title : "友通华盛数码专营店",

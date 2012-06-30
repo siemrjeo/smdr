@@ -4,8 +4,19 @@ body{
 	text-align: center;
 }
 
-table{
-	
+.ad{
+	overflow: hidden;
+}
+
+#keyword{
+	width: 700px;
+	height: 30px;
+	font-size: 18px;
+}
+
+#searchButton{
+	height:30px;
+	font-size:18px;
 }
 
 #divMain{

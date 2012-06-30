@@ -179,7 +179,7 @@ function setTip() {
 			return true;
 		}
 		var shopScore = item.shopScore;
-		var traderates = item.traderates;
+		// var traderates = item.traderates;
 		// console.log(shopScore);
 		// console.log(traderates);
 		if ($.isEmptyObject(shopScore)) {
@@ -205,30 +205,30 @@ function setTip() {
 				}
 			});
 		}
-		if ($.isEmptyObject(traderates)) {
-			$.ajax({
-				url : "buyer/getTraderates",
-				async : false,
-				data : {
-					num_iid : item.num_iid,
-					sellerNick : item.nick
-				},
-				success : function(data, textStatus) {
-					// console.log($.toJSON(data));
-					if (data.is_success) {
-						item.traderates = data;
-						traderates = data;
-					} else {
-						return true;
-					}
-				},
-				complete : function(event, XMLHttpRequest, textStatus) {
-				},
-				error : function(XMLHttpRequest, textStatus, errorThrown) {
-					return true;
-				}
-			});
-		}
+		// if ($.isEmptyObject(traderates)) {
+		// $.ajax({
+		// url : "buyer/getTraderates",
+		// async : false,
+		// data : {
+		// num_iid : item.num_iid,
+		// sellerNick : item.nick
+		// },
+		// success : function(data, textStatus) {
+		// // console.log($.toJSON(data));
+		// if (data.is_success) {
+		// item.traderates = data;
+		// traderates = data;
+		// } else {
+		// return true;
+		// }
+		// },
+		// complete : function(event, XMLHttpRequest, textStatus) {
+		// },
+		// error : function(XMLHttpRequest, textStatus, errorThrown) {
+		// return true;
+		// }
+		// });
+		// }
 		var score = item.shopScore.shop_get_response.shop;
 		$("#tipDiv .shop-rate em:eq(0)").text(score.shop_score.item_score);
 		$("#tipDiv .shop-rate em:eq(1)").text(score.shop_score.service_score);
@@ -236,19 +236,25 @@ function setTip() {
 		$("#tipDiv .shop-rate strong:eq(1)").text(score.nick);
 		$("#tipDiv .shop-rate div:eq(0) span").text(score.created);
 		$("#tipDiv .shop-rate div:eq(1) span").text(item.item_location);
-		if ($.isEmptyObject(item.traderates.traderates_search_response) || item.traderates.traderates_search_response.total_results == 0) {
-			$("#tipDiv .traderates-info li").attr("title", "");
-			$("#tipDiv .traderates-info li .bn").text("暂无评论");
-			$("#tipDiv .traderates-info li .content").text("");
-		} else {
-			var traderates = item.traderates.traderates_search_response.trade_rates.trade_rate;// 这是一个json数组。
-			for (i in traderates) {
-				var traderate = traderates[i];
-				$(String.format("#tipDiv .traderates-info li:eq(%1)", i)).attr("title", traderate.created);
-				$(String.format("#tipDiv .traderates-info li:eq(%1) .bn", i)).text(traderate.nick + ":    ");
-				$(String.format("#tipDiv .traderates-info li:eq(%1) .content", i)).text(traderate.content);
-			}
-		}
+		// if ($.isEmptyObject(item.traderates.traderates_search_response) ||
+		// item.traderates.traderates_search_response.total_results == 0) {
+		// $("#tipDiv .traderates-info li").attr("title", "");
+		// $("#tipDiv .traderates-info li .bn").text("暂无评论");
+		// $("#tipDiv .traderates-info li .content").text("");
+		// } else {
+		// var traderates =
+		// item.traderates.traderates_search_response.trade_rates.trade_rate;//
+		// 这是一个json数组。
+		// for (i in traderates) {
+		// var traderate = traderates[i];
+		// $(String.format("#tipDiv .traderates-info li:eq(%1)",
+		// i)).attr("title", traderate.created);
+		// $(String.format("#tipDiv .traderates-info li:eq(%1) .bn",
+		// i)).text(traderate.nick + ": ");
+		// $(String.format("#tipDiv .traderates-info li:eq(%1) .content",
+		// i)).text(traderate.content);
+		// }
+		// }
 		$(this).qtip({
 			content : {
 				text : $("#tipDiv").html(),
