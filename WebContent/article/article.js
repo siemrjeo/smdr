@@ -8,38 +8,17 @@ var articleList = {
 	}, {
 		title : "Mac操作技巧",
 		href : "20120509/03.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
-	}, {
-		title : "苹果公司标志的由来",
-		href : "20120509/01.html"
 	} ],
 	android : [ {
 		title : "苹果公司标志的由来3",
 		href : "20120509/01.html"
 	} ],
 	DSTL : [ {
-		title : "苹果公司标志的由来4",
+		title : "摄影大师名言",
 		href : "20120509/01.html"
 	}, {
-		title : "苹果公司标志的由来5",
-		href : "20120509/01.html"
+		title : "给摄影新手的十大建议",
+		href : "20120509/02.html"
 	} ]
 };
 function showArticle($appleC, $androidC, $DSTLC) {

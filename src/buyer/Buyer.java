@@ -31,10 +31,13 @@ public class Buyer extends SmdrBase {
 	public String login() {
 		// request = JSONObject.fromObject(getRequestJSON());
 		try {
-			boolean isVerify = TaobaoUtils.verifyTopResponse(request.getString("top_parameters"),
-					request.getString("top_session"), request.getString("top_sign"), request.getString("top_appkey"),
-					appSecret);
-			Map<String, String> topParams = TaobaoUtils.decodeTopParams(request.getString("top_parameters"));
+			boolean isVerify = TaobaoUtils.verifyTopResponse(
+					request.getString("top_parameters"),
+					request.getString("top_session"),
+					request.getString("top_sign"),
+					request.getString("top_appkey"), appSecret);
+			Map<String, String> topParams = TaobaoUtils.decodeTopParams(request
+					.getString("top_parameters"));
 			response.put("decodeTopParams", topParams);
 			if (isVerify) {
 				session.put("top_session", request.getString("top_session"));
@@ -71,8 +74,10 @@ public class Buyer extends SmdrBase {
 
 		HashMap<Long, Integer> map = new HashMap<Long, Integer>();
 		try {
-			TaobaokeItemsDetailGetResponse tidgResponse = client.execute(tidgRequest);
-			for (TaobaokeItemDetail detail : tidgResponse.getTaobaokeItemDetails()) {
+			TaobaokeItemsDetailGetResponse tidgResponse = client
+					.execute(tidgRequest);
+			for (TaobaokeItemDetail detail : tidgResponse
+					.getTaobaokeItemDetails()) {
 				long cid = detail.getItem().getCid();
 				if (map.containsKey(cid)) {
 					int value = map.get(cid) + 1;
@@ -115,7 +120,8 @@ public class Buyer extends SmdrBase {
 		if (request.get("cid") != null && request.getLong("cid") != 0) {
 			tigRequest.setCid(request.getLong("cid"));
 		}
-		if (request.get("keyword") != null && !request.getString("keyword").equals("")) {
+		if (request.get("keyword") != null
+				&& !request.getString("keyword").equals("")) {
 			tigRequest.setKeyword(request.getString("keyword"));
 		}
 		tigRequest
@@ -126,9 +132,11 @@ public class Buyer extends SmdrBase {
 		try {
 			TaobaokeItemsGetResponse tigResponse = client.execute(tigRequest);
 			if (tigRequest.getCid() == null || tigRequest.getCid() == 0) {
-				response.put("CommissionNum_desc_cid", searchCid(tigResponse.getTaobaokeItems()));
+				response.put("CommissionNum_desc_cid",
+						searchCid(tigResponse.getTaobaokeItems()));
 			}
-			response.put("averagePrice", computeAveragePrice(tigResponse.getTaobaokeItems()));
+			response.put("averagePrice",
+					computeAveragePrice(tigResponse.getTaobaokeItems()));
 			// response.put("CommissionNum_desc",
 			// JSONObject.fromObject(tigResponse.getBody()));
 			response.putAll(JSONObject.fromObject(tigResponse.getBody()));
@@ -148,7 +156,8 @@ public class Buyer extends SmdrBase {
 		if (request.get("cid") != null && request.getLong("cid") != 0) {
 			tigRequest.setCid(request.getLong("cid"));
 		}
-		if (request.get("keyword") != null && !request.getString("keyword").equals("")) {
+		if (request.get("keyword") != null
+				&& !request.getString("keyword").equals("")) {
 			tigRequest.setKeyword(request.getString("keyword"));
 		}
 		tigRequest
@@ -180,7 +189,8 @@ public class Buyer extends SmdrBase {
 		if (request.get("cid") != null && request.getLong("cid") != 0) {
 			tigRequest.setCid(request.getLong("cid"));
 		}
-		if (request.get("keyword") != null && !request.getString("keyword").equals("")) {
+		if (request.get("keyword") != null
+				&& !request.getString("keyword").equals("")) {
 			tigRequest.setKeyword(request.getString("keyword"));
 		}
 		tigRequest
@@ -203,7 +213,8 @@ public class Buyer extends SmdrBase {
 	// 按价格升序，相似价位推荐,必须要cid参数,keyword,和价位参数
 	public String searchPrice_asc() {
 		String startPrice = "0.00", endPrice = "0.00";
-		if (request.get("averagePrice") == null || request.getDouble("averagePrice") == 0) {// 无价格信息，返回
+		if (request.get("averagePrice") == null
+				|| request.getDouble("averagePrice") == 0) {// 无价格信息，返回
 			response.put("sub_msg", "无价格范围信息！");
 			return "success";
 		} else {
@@ -218,7 +229,8 @@ public class Buyer extends SmdrBase {
 		TaobaokeItemsGetRequest tigRequest = new TaobaokeItemsGetRequest();
 		tigRequest.setNick("simerjoe");// 设置淘宝客帐号
 		tigRequest.setCid(request.getLong("cid"));
-		if (request.get("keyword") == null || request.getString("keyword").equals("")) {
+		if (request.get("keyword") == null
+				|| request.getString("keyword").equals("")) {
 			response.put("sub_msg", "keyword为空，无法按价格降序！");
 			return "success";
 		} else {
@@ -245,7 +257,8 @@ public class Buyer extends SmdrBase {
 	public String searchPrice_range() {
 		// request = JSONObject.fromObject(getRequestJSON());
 		String startPrice = "0.00", endPrice = "0.00";
-		if (request.get("averagePrice") == null || request.getDouble("averagePrice") == 0) {// 无价格信息，返回
+		if (request.get("averagePrice") == null
+				|| request.getDouble("averagePrice") == 0) {// 无价格信息，返回
 			response.put("sub_msg", "无价格范围信息！");
 			return "success";
 		} else {
@@ -326,7 +339,8 @@ public class Buyer extends SmdrBase {
 	public String dynamicAD() {
 		// 专业单反50003773,手机1512，平板电脑50019780，台式机50018222
 		if (application.get("adUpdateDate") == null
-				|| !application.get("adUpdateDate").equals(Calendar.getInstance().get(Calendar.DAY_OF_MONTH))) {
+				|| !application.get("adUpdateDate").equals(
+						Calendar.getInstance().get(Calendar.DAY_OF_MONTH))) {
 			getTmallData(50003773l);
 			getTmallData(1512L);
 			getTmallData(50019780L);
@@ -345,12 +359,14 @@ public class Buyer extends SmdrBase {
 		tsisRequest.setCid(cid);
 		try {
 			// 获取天猫精选
-			TmallSelectedItemsSearchResponse tsisResponse = client.execute(tsisRequest);
+			TmallSelectedItemsSearchResponse tsisResponse = client
+					.execute(tsisRequest);
 			List<String> cidList = new ArrayList<String>();
 			for (SelectedItem item : tsisResponse.getItemList().subList(0, 40)) {
 				cidList.add(item.getNumIid().toString());
 			}
-			String iids = cidList.toString().replace('[', ' ').replace(']', ' ');
+			String iids = cidList.toString().replace('[', ' ')
+					.replace(']', ' ');
 
 			// 获取天猫特价--待开放
 			// 淘宝客店铺转换
@@ -364,12 +380,16 @@ public class Buyer extends SmdrBase {
 			// 淘宝客商品转换
 			TaobaokeItemsConvertRequest ticRequest = new TaobaokeItemsConvertRequest();
 			ticRequest.setNick("simerjoe");
-			ticRequest.setFields("nick,title,price,click_url,shop_click_url,pic_url,commission_rate,volume");
+			ticRequest
+					.setFields("nick,title,price,click_url,shop_click_url,pic_url,commission_rate,volume");
 			ticRequest.setNumIids(iids);// 最大40个
-			TaobaokeItemsConvertResponse ticResponse = client.execute(ticRequest);
-			application.put(String.valueOf(cid), ticResponse.getTaobaokeItems());
-			application.put("adUpdateDate", Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
-			System.out.println("application add");
+			TaobaokeItemsConvertResponse ticResponse = client
+					.execute(ticRequest);
+			application
+					.put(String.valueOf(cid), ticResponse.getTaobaokeItems());
+			application.put("adUpdateDate",
+					Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
+			// System.out.println("application add");
 		} catch (ApiException e) {
 			response.put("sub_msg", e.getMessage());
 		}

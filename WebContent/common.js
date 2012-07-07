@@ -35,6 +35,8 @@ function AutoUpdateJavaScript() {
 	var str = "?update=" + year + month + date + hours;
 	var adjson = $("head script[src*='adjson.js']");// 更新广告js
 	adjson.attr('src', adjson.attr('src') + str);
+	var accjson = $("head script[src*='accjson.js']");// 更新配件js
+	accjson.attr('src', accjson.attr('src') + str);
 	var article = $("head script[src*='article.js']");// 更新文章js
 	article.attr('src', article.attr('src') + str);
 	var proxy = $("head script[src*='proxy.js']");// 更新proxy js

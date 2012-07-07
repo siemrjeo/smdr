@@ -28,6 +28,7 @@ $(document).ready(function() {
 
 	bindMap();
 	showAD($("#tableMain > tbody > tr:eq(3) > td:eq(1)"), $("#tableMain > tbody > tr:eq(6) > td:eq(1)"), $("#tableMain > tbody > tr:eq(9) > td:eq(1)"));
+	showAcc($("#appleAcc"), $("#androidAcc"), $("#DSTLAcc"));
 	showArticle($("#tableMain > tbody > tr:eq(4) > td:eq(0)"), $("#tableMain > tbody > tr:eq(7) > td:eq(0)"), $("#tableMain > tbody > tr:eq(10) > td:eq(0)"));
 });
 
@@ -52,7 +53,8 @@ function search(cid, keyword) {
 	}
 
 	store.set("search", search);
-	location.href = "search.html";
+	// location.href = "search.html";
+	window.open("search.html", "_blank");
 }
 
 function toS8() {// 转跳到搜吧

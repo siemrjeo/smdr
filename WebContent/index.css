@@ -1,42 +1,45 @@
 @CHARSET "UTF-8";
 
-body{
+body {
 	text-align: center;
 }
 
-.ad{
+.ad {
 	overflow: hidden;
 }
 
-#keyword{
+#keyword {
 	width: 700px;
 	height: 30px;
 	font-size: 18px;
 }
 
-#searchButton{
-	height:30px;
-	font-size:18px;
+#searchButton {
+	height: 30px;
+	font-size: 18px;
 }
 
-#divMain{
-	margin:auto;
+#divMain {
+	margin: auto;
 	width: 950px;
 	height: 1900px;
 }
 
-td.appleAdvert,td.androidAdvert,td.DSTLAdvert{
+td.appleAdvert,td.androidAdvert,td.DSTLAdvert,#appleAcc,#androidAcc,#DSTLArticle
+	{
 	text-align: left;
 	vertical-align: top;
+	margin-left: 40px;
 }
 
-div.appleAdvert,div.androidAdvert,div.DSTLAdvert{
+div.appleAdvert,div.androidAdvert,div.DSTLAdvert {
 	overflow: hidden;
 	width: 100%;
 	height: 20px;
 }
 
-.appleArticle, .androidArticle, .DSTLArticle{
+.appleArticle,.androidArticle,.DSTLArticle,#appleAcc a,#androidAcc a,#DSTLArticle a
+	{
 	margin-right: 20px;
 }
 
