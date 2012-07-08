@@ -10,8 +10,11 @@ var articleList = {
 		href : "20120509/03.html"
 	} ],
 	android : [ {
-		title : "苹果公司标志的由来3",
-		href : "20120509/01.html"
+		title : "内存卡的Class是什么意思",
+		href : "20120708/01.html"
+	}, {
+		title : "各种手机屏幕的区别",
+		href : "20120708/02.html"
 	} ],
 	DSTL : [ {
 		title : "摄影大师名言",
