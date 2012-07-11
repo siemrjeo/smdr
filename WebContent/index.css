@@ -25,7 +25,7 @@ body {
 	height: 1900px;
 }
 
-td.appleAdvert,td.androidAdvert,td.DSTLAdvert,#appleAcc,#androidAcc,#DSTLArticle
+td.appleAdvert,td.androidAdvert,td.DSTLAdvert,#appleAcc,#androidAcc,#DSTLAcc
 	{
 	text-align: left;
 	vertical-align: top;
@@ -38,11 +38,28 @@ div.appleAdvert,div.androidAdvert,div.DSTLAdvert {
 	height: 20px;
 }
 
-.appleArticle,.androidArticle,.DSTLArticle,#appleAcc a,#androidAcc a,#DSTLArticle a
-	{
+#appleArticle,#androidArticle,#DSTLArticle {
+	height: 100%;
+}
+
+#appleAcc,#androidAcc,#DSTLAcc{
+	height: 100%;
+}
+
+.appleArticle,.androidArticle,.DSTLArticle {
+	margin-right: 20px;
+}
+
+#appleAcc a,#androidAcc a,#DSTLAcc a {
 	margin-right: 20px;
 }
 
 .typeLogo {
 	vertical-align: middle;
+}
+
+.typeTitle {
+	font-size: 22px;
+	text-align: left;
+	font-family: Palatino, Georgia, Times, "Times New Roman";
 }

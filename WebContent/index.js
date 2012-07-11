@@ -29,7 +29,10 @@ $(document).ready(function() {
 	bindMap();
 	showAD($("#tableMain > tbody > tr:eq(3) > td:eq(1)"), $("#tableMain > tbody > tr:eq(6) > td:eq(1)"), $("#tableMain > tbody > tr:eq(9) > td:eq(1)"));
 	showAcc($("#appleAcc"), $("#androidAcc"), $("#DSTLAcc"));
-	showArticle($("#tableMain > tbody > tr:eq(4) > td:eq(0)"), $("#tableMain > tbody > tr:eq(7) > td:eq(0)"), $("#tableMain > tbody > tr:eq(10) > td:eq(0)"));
+	// showArticle($("#tableMain > tbody > tr:eq(4) > td:eq(0)"), $("#tableMain
+	// > tbody > tr:eq(7) > td:eq(0)"), $("#tableMain > tbody > tr:eq(10) >
+	// td:eq(0)"));
+	showArticle($("#appleArticle"), $("#androidArticle"), $("#DSTLArticle"));
 });
 
 function search(cid, keyword) {

@@ -22,6 +22,12 @@ var articleList = {
 	}, {
 		title : "给摄影新手的十大建议",
 		href : "20120509/02.html"
+	}, {
+		title : "5个简单方法提高你的构图水平",
+		href : "20120509/03.html"
+	}, {
+		title : "几个案例，教你入门",
+		href : "20120509/04.html"
 	} ]
 };
 function showArticle($appleC, $androidC, $DSTLC) {

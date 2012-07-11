@@ -118,11 +118,6 @@ var ad = {
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzdZ1eds96SWnFUl%2FktUA%3D&p=mm_23868633_0_0"
 	} ],
 	android : [ {
-		title : "卓越数码城",
-		url : "http://shop60706723.taobao.com",
-		iconurl : getSCS(12),
-		tkurl : ""
-	}, {
 		title : "珺雅数码专营店",
 		url : "http://diyasm.tmall.com/",
 		iconurl : getSCS(12),
@@ -158,15 +153,30 @@ var ad = {
 		iconurl : getSCS(12),
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzff%2BOiiOapv3l0QY4NA%3D%3D&p=mm_23868633_0_0"
 	}, {
-		title : "仁信数码专营店 ",
-		url : "http://renxinsm.tmall.com",
+		title : "摩托罗拉官方旗舰店",
+		url : "http://motorola.tmall.com/",
 		iconurl : tmallicon,
-		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzfPbTVt%2F3GIyAhxJ8JI4%3D&p=mm_23868633_0_0"
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzcgNe0CbFRcQA6V2eqZE%3D&p=mm_23868633_0_0"
 	}, {
-		title : "索旭数码专营店",
-		url : "http://suoxusm.tmall.com",
+		title : "创东数码",
+		url : "http://chuangdongsm.tmall.com/",
 		iconurl : tmallicon,
-		tkurl : ""
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzcgp1TKcyWlGBa2r5D7s%3D&p=mm_23868633_0_0"
+	}, {
+		title : "海文通信数码",
+		url : "http://shop33122727.taobao.com/",
+		iconurl : getSCS(14),
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzdZdEOt59lUo8vFdmMQ%3D%3D&p=mm_23868633_0_0"
+	}, {
+		title : "千喜通讯",
+		url : "http://shop35237384.taobao.com/",
+		iconurl : getSCS(12),
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzfPH9sv7TtZ7igNjc6A%3D%3D&p=mm_23868633_0_0"
+	}, {
+		title : "智联电讯",
+		url : "http://shop60359470.taobao.com/",
+		iconurl : getSCS(12),
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ5x%2BOzd%2BTisldgvzZQd6mK4mA%3D&p=mm_23868633_0_0"
 	} ],
 	DSTL : [ {
 		title : " 佳能相机好邦专卖店",
