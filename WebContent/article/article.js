@@ -28,6 +28,9 @@ var articleList = {
 	}, {
 		title : "几个案例，教你入门",
 		href : "20120509/04.html"
+	}, {
+		title : "使用变焦镜头的十条经验",
+		href : "20120509/05.html"
 	} ]
 };
 function showArticle($appleC, $androidC, $DSTLC) {
