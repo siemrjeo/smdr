@@ -9,6 +9,9 @@ var acc = {
 		title : "iPhone4s珍珠保护套",
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIQ2T3xs7O7Dklk9Wh8Hzq4nc8SccOq2vRwXSg%3D%3D&p=mm_23868633_0_0"
 	}, {
+		title : "移动输入新标准-虚拟键盘",
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIQ3gCaQfDSAX%2B5JHD9JI%2FAiw%2FvKJiYcGtK6&p=mm_23868633_0_0"
+	}, {
 		title : "iPad带键盘保护套",
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIKrMylpCSwSwneOB3KoRZ6sIeIDtKCR9t14XQ%3D%3D&p=mm_23868633_0_0"
 	}, {
@@ -29,6 +32,9 @@ var acc = {
 	}, {
 		title : "真皮保护套",
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIA687gTY7Hqj%2FaKOIL%2B7vtgBxvsPTvH%2FWcMPg%3D%3D&p=mm_23868633_0_0"
+	}, {
+		title : "iPhone 变身徕卡",
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIgxUcdqKqSTZ3pONyddKfcS%2ByTXLR2MMj0D4Q%3D%3D&p=mm_23868633_0_0"
 	} ],
 	android : [ {
 		title : "三星i9300套餐配件",
@@ -39,6 +45,12 @@ var acc = {
 	}, {
 		title : "外接电源",
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIbmVL1K7of5h%2F1Z3p2y0LfnEC5OaYyiJJOtjA%3D%3D&p=mm_23868633_0_0"
+	}, {
+		title : "移动输入新标准-虚拟键盘",
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIQ3gCaQfDSAX%2B5JHD9JI%2FAiw%2FvKJiYcGtK6&p=mm_23868633_0_0"
+	}, {
+		title : "魔声耳机",
+		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIOW1muC9dMIKU%2F5d0F4%2FSEMbQO1v%2BOaeWeuBA%3D%3D&p=mm_23868633_0_0"
 	}, {
 		title : "魅族MX方形后盖",
 		tkurl : "http://s.click.taobao.com/t_8?e=7HZ6jHSTbIQwasSSDZ5iOY%2Fs1vHMrWpMTbyFEQeI6Np2&p=mm_23868633_0_0"

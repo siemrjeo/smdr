@@ -31,6 +31,9 @@ var articleList = {
 	}, {
 		title : "使用变焦镜头的十条经验",
 		href : "20120509/05.html"
+	}, {
+		title : "美丽风光",
+		href : "20120509/06.html"
 	} ]
 };
 function showArticle($appleC, $androidC, $DSTLC) {
